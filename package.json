@@ -1,0 +1,14 @@
+{
+  "name": "build-sidecars",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pinned, checksummed mirror of the third-party binaries the desktop/extension projects bundle.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "fetch": "node scripts/fetch.mjs",
+    "verify": "node scripts/verify.mjs",
+    "publish": "node scripts/publish.mjs",
+    "restore": "node scripts/restore.mjs"
+  }
+}
