@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "tag": "vendor-2026-08-13",
-  "generatedAt": "2026-08-13T01:12:25.431Z",
+  "generatedAt": "2026-08-13T01:21:55.024Z",
   "artifacts": [
     {
       "id": "ffmpeg",
@@ -21,7 +21,7 @@
         "home-flix",
         "media-downloader"
       ],
-      "fetchedAt": "2026-08-13T01:09:57.817Z"
+      "fetchedAt": "2026-08-13T01:18:34.186Z"
     },
     {
       "id": "ffmpeg",
@@ -41,7 +41,7 @@
         "home-flix",
         "media-downloader"
       ],
-      "fetchedAt": "2026-08-13T01:10:02.275Z"
+      "fetchedAt": "2026-08-13T01:18:39.098Z"
     },
     {
       "id": "ffmpeg",
@@ -61,7 +61,7 @@
         "home-flix",
         "media-downloader"
       ],
-      "fetchedAt": "2026-08-13T01:10:41.702Z"
+      "fetchedAt": "2026-08-13T01:19:11.345Z"
     },
     {
       "id": "ffmpeg",
@@ -81,7 +81,7 @@
         "home-flix",
         "media-downloader"
       ],
-      "fetchedAt": "2026-08-13T01:10:25.972Z"
+      "fetchedAt": "2026-08-13T01:18:57.147Z"
     },
     {
       "id": "ffmpeg",
@@ -101,7 +101,7 @@
         "home-flix",
         "media-downloader"
       ],
-      "fetchedAt": "2026-08-13T01:10:58.117Z"
+      "fetchedAt": "2026-08-13T01:19:27.959Z"
     },
     {
       "id": "ffprobe",
@@ -120,7 +120,7 @@
       "consumers": [
         "home-flix"
       ],
-      "fetchedAt": "2026-08-13T01:11:02.578Z"
+      "fetchedAt": "2026-08-13T01:19:32.293Z"
     },
     {
       "id": "ffprobe",
@@ -139,7 +139,7 @@
       "consumers": [
         "home-flix"
       ],
-      "fetchedAt": "2026-08-13T01:11:05.751Z"
+      "fetchedAt": "2026-08-13T01:19:35.937Z"
     },
     {
       "id": "ffprobe",
@@ -158,7 +158,7 @@
       "consumers": [
         "home-flix"
       ],
-      "fetchedAt": "2026-08-13T01:11:36.027Z"
+      "fetchedAt": "2026-08-13T01:20:05.995Z"
     },
     {
       "id": "ffprobe",
@@ -177,7 +177,7 @@
       "consumers": [
         "home-flix"
       ],
-      "fetchedAt": "2026-08-13T01:11:21.269Z"
+      "fetchedAt": "2026-08-13T01:19:52.571Z"
     },
     {
       "id": "ffprobe",
@@ -196,7 +196,26 @@
       "consumers": [
         "home-flix"
       ],
-      "fetchedAt": "2026-08-13T01:11:54.382Z"
+      "fetchedAt": "2026-08-13T01:20:24.822Z"
+    },
+    {
+      "id": "libmpv-2.dll",
+      "platform": "win32-x64",
+      "triple": "x86_64-pc-windows-msvc",
+      "asset": "libmpv-2-20260813-gitf4d13e1c2c-win32-x64.dll",
+      "version": "20260813-gitf4d13e1c2c",
+      "sha256": "c079c7a52a1a62ab591de3bcdb0ac46d64a496b9cfbd9ce4f69249453cdf9174",
+      "size": 119737344,
+      "format": "pe",
+      "detectedArch": "x64",
+      "matchesPlatform": true,
+      "archNote": null,
+      "sourceUrl": "https://github.com/shinchiro/mpv-winbuild-cmake/releases/download/20260813/mpv-dev-x86_64-20260813-git-f4d13e1c2c.7z",
+      "license": "LGPL-2.1-or-later",
+      "consumers": [
+        "home-flix"
+      ],
+      "fetchedAt": "2026-08-13T01:21:55.009Z"
     },
     {
       "id": "yt-dlp",
@@ -215,7 +234,7 @@
       "consumers": [
         "media-downloader"
       ],
-      "fetchedAt": "2026-08-13T01:12:00.435Z"
+      "fetchedAt": "2026-08-13T01:20:28.261Z"
     },
     {
       "id": "yt-dlp",
@@ -234,7 +253,7 @@
       "consumers": [
         "media-downloader"
       ],
-      "fetchedAt": "2026-08-13T01:12:05.704Z"
+      "fetchedAt": "2026-08-13T01:20:31.124Z"
     },
     {
       "id": "yt-dlp",
@@ -253,7 +272,7 @@
       "consumers": [
         "media-downloader"
       ],
-      "fetchedAt": "2026-08-13T01:12:15.524Z"
+      "fetchedAt": "2026-08-13T01:20:37.156Z"
     },
     {
       "id": "yt-dlp",
@@ -272,7 +291,7 @@
       "consumers": [
         "media-downloader"
       ],
-      "fetchedAt": "2026-08-13T01:12:10.706Z"
+      "fetchedAt": "2026-08-13T01:20:34.106Z"
     },
     {
       "id": "yt-dlp",
@@ -291,7 +310,7 @@
       "consumers": [
         "media-downloader"
       ],
-      "fetchedAt": "2026-08-13T01:12:18.134Z"
+      "fetchedAt": "2026-08-13T01:20:38.684Z"
     }
   ]
 }
