@@ -44,12 +44,21 @@ export const ARTIFACTS = [
     license: 'GPL-3.0-or-later',
     consumers: ['home-flix', 'media-downloader'],
     targets: {
+      // evermeet publishes an x86_64-only build, and ffmpeg-static does have a
+      // native arm64 one — but only at 6.1.1, and no provider has a native
+      // arm64 *ffprobe* at all. Pairing the two would ship ffmpeg 6.1.1 next to
+      // ffprobe 9.0.1, a skew upstream never produces and which the consumers'
+      // playback-compatibility pipeline (one probe feeding one transcode) has
+      // no reason to tolerate. The mirror reproduces upstream rather than
+      // improving on it: a mirror that changes what gets installed is not a
+      // mirror. `detectedArch` in the manifest records that this is the x86_64
+      // build, so the Rosetta dependency is written down instead of implied.
       'darwin-arm64': {
-        versionFrom: 'literal:6.1.1',
-        // evermeet publishes an x86_64-only build; the arm64 asset below is
-        // older (6.1.1) but native. `detectedArch` in the manifest records
-        // which one actually landed, so a silent swap cannot go unnoticed.
-        sources: [binary(`${FFMPEG_STATIC}/ffmpeg-darwin-arm64`)],
+        versionFrom: 'evermeet:ffmpeg',
+        sources: [
+          archive(`${EVERMEET}/ffmpeg/zip`, 'ffmpeg'),
+          binary(`${FFMPEG_STATIC}/ffmpeg-darwin-x64`),
+        ],
       },
       'darwin-x64': {
         versionFrom: 'evermeet:ffmpeg',

@@ -1,27 +1,27 @@
 {
   "schemaVersion": 1,
   "tag": "vendor-2026-08-13",
-  "generatedAt": "2026-08-13T01:21:55.024Z",
+  "generatedAt": "2026-09-02T14:22:13.440Z",
   "artifacts": [
     {
       "id": "ffmpeg",
       "platform": "darwin-arm64",
       "triple": "aarch64-apple-darwin",
-      "asset": "ffmpeg-6.1.1-darwin-arm64",
-      "version": "6.1.1",
-      "sha256": "a90e3db6a3fd35f6074b013f948b1aa45b31c6375489d39e572bea3f18336584",
-      "size": 45568216,
+      "asset": "ffmpeg-9.0.1-darwin-arm64",
+      "version": "9.0.1",
+      "sha256": "e27de05e3a9f9c758f9766d15d1a069fddeed5f725e35d9ab28683be4740dad7",
+      "size": 80776328,
       "format": "macho",
-      "detectedArch": "arm64",
-      "matchesPlatform": true,
-      "archNote": null,
-      "sourceUrl": "https://github.com/eugeneware/ffmpeg-static/releases/download/b6.1.1/ffmpeg-darwin-arm64",
+      "detectedArch": "x64",
+      "matchesPlatform": false,
+      "archNote": "arch x64, expected arm64",
+      "sourceUrl": "https://evermeet.cx/ffmpeg/getrelease/ffmpeg/zip",
       "license": "GPL-3.0-or-later",
       "consumers": [
         "home-flix",
         "media-downloader"
       ],
-      "fetchedAt": "2026-08-13T01:18:34.186Z"
+      "fetchedAt": "2026-09-02T14:22:13.426Z"
     },
     {
       "id": "ffmpeg",

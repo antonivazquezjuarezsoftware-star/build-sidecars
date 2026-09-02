@@ -43,7 +43,7 @@ yt-dlp is released into the public domain. Source: <https://github.com/yt-dlp/yt
 
 | Artifact | Platform | Version | License | Source | sha256 |
 | --- | --- | --- | --- | --- | --- |
-| `ffmpeg` | darwin-arm64 | 6.1.1 | GPL-3.0-or-later | [upstream](https://github.com/eugeneware/ffmpeg-static/releases/download/b6.1.1/ffmpeg-darwin-arm64) | `a90e3db6a3fd35f6…` |
+| `ffmpeg` | darwin-arm64 | 9.0.1 | GPL-3.0-or-later | [upstream](https://evermeet.cx/ffmpeg/getrelease/ffmpeg/zip) | `e27de05e3a9f9c75…` |
 | `ffmpeg` | darwin-x64 | 9.0.1 | GPL-3.0-or-later | [upstream](https://evermeet.cx/ffmpeg/getrelease/ffmpeg/zip) | `e27de05e3a9f9c75…` |
 | `ffmpeg` | linux-arm64 | master-20260812 | GPL-3.0-or-later | [upstream](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linuxarm64-gpl.tar.xz) | `4bf08b61de3c079a…` |
 | `ffmpeg` | linux-x64 | master-20260812 | GPL-3.0-or-later | [upstream](https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-linux64-gpl.tar.xz) | `5933fb8a40ee67de…` |
