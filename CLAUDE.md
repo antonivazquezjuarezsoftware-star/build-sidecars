@@ -70,5 +70,19 @@ staging area plus a lockfile.
 - **npm packages and Node.js distributions are out of scope.** Versioned
   registries with their own integrity checking; mirroring them would add ~1 GB
   for no availability gain.
-- **The ffmpeg builds are GPL**, so this repository stays private unless the
-  corresponding sources are linked from it.
+- **The ffmpeg builds are GPL and this repository is public**, so it conveys
+  them: `THIRD-PARTY.md` carries the corresponding-source offer. It is
+  generated from `manifest.json` (`scripts/emit-attribution.mjs`) because a
+  hand-maintained list stops matching what is published on the first release
+  nobody remembers to edit it for. Public was chosen over private because a
+  build container mounts only the project being built — it can reach a plain
+  URL, but has no way to receive a token without putting one in a versioned
+  build spec.
+- **The consumer-side mirror table is generated, not hand-copied**
+  (`scripts/emit-mirror.mjs` → each consumer's `scripts/sidecar-mirror.mjs`).
+  A wrong hash does not fail loudly: it makes the mirror get skipped and the
+  project silently falls back to the upstream host this repository exists to
+  stop depending on.
+- **The mirror is prepended to a consumer's upstream list, never replaces it.**
+  The mirror pins one fixed version, so a platform that has not been
+  re-mirrored yet must still build. `SIDECAR_MIRROR=0` skips it.

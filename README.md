@@ -35,7 +35,14 @@ npm run fetch                                        # everything, into vendor/
 npm run fetch -- --platforms win32-x64 --only ffmpeg # a subset
 npm run verify                                       # vendor/ against manifest.json
 npm run publish                                      # upload to a GitHub Release
+npm run emit                                         # regenerate THIRD-PARTY.md + consumer tables
 ```
+
+`npm run emit` is part of publishing, not an afterthought: it rewrites
+[`THIRD-PARTY.md`](THIRD-PARTY.md) (the source offer this repository owes for
+the GPL binaries it now conveys publicly) and the generated
+`scripts/sidecar-mirror.mjs` in each consumer. `npm run emit:check` fails when
+either is stale.
 
 Then, from a consuming project:
 
@@ -72,12 +79,43 @@ Deliberately **not** mirrored: npm packages (`@lydell/node-pty`,
 distributions. Those are versioned registries with their own integrity
 checking; mirroring them would add roughly a gigabyte for no availability gain.
 
+## How consumers use it
+
+Two mechanisms, for two different situations.
+
+**`scripts/sidecar-mirror.mjs`** — generated into each consumer by
+`npm run emit` and **committed there**. It is a plain table of
+`{ url, sha256, version }`, so a consumer's existing fetcher tries this mirror
+first and falls back to its upstream providers if anything about it fails. This
+is the path that works inside a build container, which mounts only the one
+project and cannot reach this repository at all.
+
+**`scripts/restore.mjs`** — for pulling binaries into a checkout by hand, when
+this repository *is* present.
+
+Both verify `sha256` before installing anything. A mirror without that check is
+just another unverified download, and the failure it catches — a truncated or
+substituted binary — produces an installer that looks complete and does not
+work.
+
+Set `SIDECAR_MIRROR=0` in a consumer to skip the mirror entirely. That is how
+you check whether the upstream providers still work before relying on them
+again.
+
 ## Licensing
 
-The ffmpeg builds are **GPL**. Redistributing them publicly carries an
-obligation to offer corresponding sources, which is why this repository is
-expected to stay **private**. If it is ever made public, link the upstream
-source releases from here first.
+This repository is **public**, which means it *conveys* the binaries it
+republishes. The ffmpeg/ffprobe builds are **GPL-3.0-or-later** and libmpv is
+**LGPL-2.1-or-later**, so the corresponding-source offer lives in
+[`THIRD-PARTY.md`](THIRD-PARTY.md), generated from `manifest.json` so it cannot
+drift from what is actually published.
+
+Nothing here is built from source: every asset is byte-for-byte what its
+upstream provider published, which is why pointing at the upstream source is
+sufficient. One rough edge worth knowing: BtbN assets are snapshots of ffmpeg
+`master` (`master-YYYYMMDD`), so identifying the exact revision means going
+through the upstream release recorded in each entry's `sourceUrl` rather than
+reading a version tag.
 
 ## Known upstream quirks
 

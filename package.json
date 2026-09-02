@@ -4,11 +4,15 @@
   "private": true,
   "type": "module",
   "description": "Pinned, checksummed mirror of the third-party binaries the desktop/extension projects bundle.",
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "fetch": "node scripts/fetch.mjs",
     "verify": "node scripts/verify.mjs",
     "publish": "node scripts/publish.mjs",
-    "restore": "node scripts/restore.mjs"
+    "restore": "node scripts/restore.mjs",
+    "emit": "node scripts/emit-attribution.mjs && node scripts/emit-mirror.mjs",
+    "emit:check": "node scripts/emit-attribution.mjs --check && node scripts/emit-mirror.mjs --check"
   }
 }
