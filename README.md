@@ -102,6 +102,11 @@ Set `SIDECAR_MIRROR=0` in a consumer to skip the mirror entirely. That is how
 you check whether the upstream providers still work before relying on them
 again.
 
+Both mechanisms act at **build time**: an installed app keeps the binary its
+installer shipped with. A proposal for updating yt-dlp in already-installed
+apps from this repository is in
+[`docs/runtime-updates.md`](docs/runtime-updates.md).
+
 ## Licensing
 
 This repository is **public**, which means it *conveys* the binaries it
